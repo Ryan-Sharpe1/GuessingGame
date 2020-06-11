@@ -18,11 +18,11 @@ namespace GuessingGame
 
             int guessLimit = 3;
             int guessCount = 0;
-            int remainingGuesses = guessLimit - guessCount;
+            int remainingGuesses = guessLimit;
 
             int questionLimit = 3;
             int questionCount = 0;
-            int remainingQuestions = questionLimit - questionCount;
+            int remainingQuestions = questionLimit;
 
 
             if (guessCount == 0 && questionCount == 0)
@@ -43,11 +43,13 @@ namespace GuessingGame
                 {
                     GuessingGames(secretWord);
                     guessCount++;
+                    remainingGuesses--;
                 }
                 if (guessorQuestion == "Question" | guessorQuestion == "question")
                 {
                     QuestionTime(secretWord);
                     questionCount++;
+                    remainingQuestions--;
                 }
                 else
                 {
